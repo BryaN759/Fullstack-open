@@ -1,0 +1,16 @@
+sequenceDiagram
+    Note left of browser: user makes new note and click save button
+    Note over browser: convert new note to JSON
+
+    participant browser
+    participant server
+
+    browser->server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+    activate server
+
+    note over server: server add new note to the notes page
+
+    server-->>browser: [{ "content": "HTML is easy", "date": "2023-6-29" }, ... ]
+    deactivate server
+
+    
